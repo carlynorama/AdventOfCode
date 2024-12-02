@@ -21,8 +21,8 @@ mkdir -p $BUILDROOT
 # cmake -B $BUILDROOT -G Ninja .
 # cmake --build $BUILDROOT
 
-swiftc *swift $DATA_FOLDER/realData.swift -o $BUILDROOT/$PN
-
-cd $BUILDROOT
-./$PN
-cd $OLDPWD
+if swiftc *swift $DATA_FOLDER/realData.swift -o $BUILDROOT/$PN ; then
+    cd $BUILDROOT
+    ./$PN
+    cd $OLDPWD
+fi
