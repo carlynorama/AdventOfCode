@@ -18,11 +18,16 @@ export SHARED=$SHAREDROOT
 
 mkdir -p $BUILDROOT
 
-# cmake -B $BUILDROOT -G Ninja .
-# cmake --build $BUILDROOT
-
-if swiftc *swift $DATA_FOLDER/realData.swift -o $BUILDROOT/$PN ; then
+cmake -B $BUILDROOT -G Ninja .
+if cmake --build $BUILDROOT ; then
     cd $BUILDROOT
     ./$PN
     cd $OLDPWD
 fi
+
+
+# if swiftc *swift $DATA_FOLDER/realData.swift -o $BUILDROOT/$PN ; then
+#     cd $BUILDROOT
+#     ./$PN
+#     cd $OLDPWD
+# fi
