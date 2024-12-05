@@ -4,10 +4,12 @@ import Foundation
 
 print("Hello Brand New Day 3")
 
-// //MARK: --- Part: 1
+//MARK: --- Part: 1
 
 //let findMul = /mul\(\d{1,3},\d{1,3}\)/
-let mulREgEx = #/mul\((\d{1,3}),(\d{1,3})\)/#
+  
+        let mulREgEx = #/mul\((\d{1,3}),(\d{1,3})\)/#
+
 
 func sumFromData(input:String, pattern:Regex<(Substring, Substring, Substring)>) -> Int {
     let matches = input.matches(of:pattern)
@@ -22,7 +24,7 @@ let p1 = sumFromData(input: test0, pattern: mulREgEx)
 print("Part 1:" , p1)
 // -----------------------------------------------------------------------------
 
-// // --- Part: 2
+//MARK: --- Part: 2
 
 let withCommands = #/(?<mul>mul\((?<a>\d{1,3}),(?<b>\d{1,3})\))|(?<off>don't\(\))|(?<on>do\(\))/#
 
